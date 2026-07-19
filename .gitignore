@@ -1,0 +1,5 @@
+# macOS metadata
+.DS_Store
+
+# Skill evaluation workspaces (reproducible from evals/evals.json)
+*-workspace/
