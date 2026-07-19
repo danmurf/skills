@@ -1,0 +1,26 @@
+{
+  "skill_name": "post-architect",
+  "evals": [
+    {
+      "id": 1,
+      "name": "fuzzy-remote-work-idea",
+      "prompt": "I want to write a blog post about remote work. I've been doing it for like three years and I have some thoughts but I'm honestly not sure how to structure it. Like I know I want to say something about how people get it wrong, and there's this moment I remember where I was checking emails at 9pm on the couch and realized something had to change. Can you help me figure out the shape of this thing before I write it?",
+      "expected_output": "The assistant should conduct a Socratic interview (asking one question at a time, mirroring back the author's words) to draw out the author's thesis, reader, takeaway, points, and shape — without suggesting any content, examples, or phrasing of its own. The interview should be brief (5-10 questions) and end with a scaffold: 3-7 sections with headings and cues in the author's own phrases, plus a transition arrow between sections. The scaffold must contain only echoes of what the author said, not the assistant's ideas. No 'have you considered mentioning X' suggestions.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "has-points-no-order",
+      "prompt": "I'm writing an article about learning to code as an adult. I already know roughly what I want to say — I want to talk about starting with Python because everyone said it was easy, getting stuck on object-oriented programming, the breakthrough when I started actually building stuff instead of doing tutorials, my advice to build real projects from day one, and also that people shouldn't be afraid to switch languages once they've got the basics. I just can't figure out what order to put these in or how to frame the whole thing. Help me find the structure?",
+      "expected_output": "The assistant should recognize the author already has points and skip ahead to ordering — fewer discovery questions, more on 'where does it start, where does it end, what's the shape.' Should propose a scaffold using the author's actual phrases ('getting stuck on object-oriented programming,' 'the breakthrough when I started actually building stuff,' etc.) as headings/cues. Must not add points the author didn't mention, must not suggest a clever framing the author didn't reach for, must not rewrite their phrasing more cleanly. Scaffold format: 3-7 sections with cues and a transition arrow line per section.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "just-a-vibe",
+      "prompt": "I want to write something about grief. My dog died last month and I keep thinking about how weird grief is — like people tell you it gets easier on a schedule and it just doesn't. Some days are fine, some days I cry in the grocery store. I don't really know what the post is yet, I just know I want to write something. Can you help?",
+      "expected_output": "The assistant should recognize the author is at the 'just a vibe' stage and spend most of its effort on early discovery questions (what's it about, who's it for, what do you want the reader to walk away with). It should NOT push the author toward a shape prematurely, should NOT suggest examples or framings ('you could write about the day he died'), and should NOT impose a narrative arc if the author's material doesn't reach for one. Final scaffold should use only the author's phrases — likely something minimal and reflective rather than a punchy argument structure. The assistant must be especially careful here not to supply emotional content or 'helpful' observations the author didn't make themselves.",
+      "files": []
+    }
+  ]
+}

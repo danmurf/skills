@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Can you help me figure out the structure of a blog post I want to write about quitting Twitter? I've got like 6 different angles in my head — the mental health thing, the dopamine addiction, the political stuff, the fact that I just got more productive — and I can't figure out which goes first or how they connect. I want to actually write the thing this time but I need a structure first",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm writing an essay about my grandmother's cooking and what it taught me about hospitality but I'm not sure if it's one essay or three. Like there's the food itself, and then there's her whole philosophy of feeding people, and then there's this one specific memory of her making bread for the whole street when someone died. Can you help me figure out the shape of this before I start writing?",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm going to dictate a blog post by talking it out (typing wrecks my wrists) and I need a rough outline I can have on a second monitor while I speak. Topic is what I learned switching from vim to zed after 8 years. I've got maybe 5 or 6 points in my head but they're not in any order. Can you help me structure it?",
+    "should_trigger": true
+  },
+  {
+    "query": "got a fuzzy idea for a piece on why our team stopped doing sprint retros and nobody missed them. dont really know what the argument is yet, just have a bunch of observations and one specific story about a retro that went horribly wrong. want to figure out the flow before i start writing — help me arrange it?",
+    "should_trigger": true
+  },
+  {
+    "query": "I have some thoughts about the 'just ship it' mentality in startups that I want to get down on paper but honestly I don't know what my actual thesis is. Like, I have anecdotes and a vague feeling that it's overapplied, but I haven't figured out what I'm actually arguing. Can you help me find the structure of the argument before I write?",
+    "should_trigger": true
+  },
+  {
+    "query": "Hi — I'm writing a piece for our engineering blog about migrating from a monolith to microservices (we did it over 14 months, mostly successfully). I know the rough sections I want: the decision, the first service we extracted, the testing strategy, what we'd do differently. I just can't figure out the ordering and what should be the opening. Can you help me structure it?",
+    "should_trigger": true
+  },
+  {
+    "query": "i want to dictate a blog post while walking the dog, about why i think the 'todo app as a learning project' advice is bad actually. can you give me a structure to talk around? i have a few points but they're a mess right now",
+    "should_trigger": true
+  },
+  {
+    "query": "I keep thinking about this essay I want to write about reading 50 books last year and what it actually did to my brain (spoiler: less than I pretended). I have a fuzzy shape in my head — start with the goal, then the reality, then what I'd tell someone considering it — but every time I try to write it the middle turns to mush. Can you help me find the structure?",
+    "should_trigger": true
+  },
+  {
+    "query": "want to write a personal essay about the year I spent as a church organist despite being an atheist. have a bunch of disconnected anecdotes and one through-line about how beauty doesn't require belief. no idea how to structure it. can you help me find the shape?",
+    "should_trigger": true
+  },
+  {
+    "query": "I need to write a blog post about our new pricing model (we're moving from per-seat to usage-based) and I want to talk it out by dictating it. Problem is I have like 4 different audiences in my head (existing customers, prospects, investors, my own team) and I don't know which one to write to. Can you help me work out the structure before I start?",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to write a blog post about why I quit Twitter. I was addicted to the dopamine, it was bad for my mental health, and honestly I just got more productive after. Can you give me some tips on writing it?",
+    "should_trigger": false
+  },
+  {
+    "query": "I want to write a blog post about my grandmother's cooking and what it taught me about hospitality. Can you help me write it?",
+    "should_trigger": false
+  },
+  {
+    "query": "I've been thinking about writing something about reading 50 books last year but I'm not really sure where to start. Any advice?",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you write me an 800 word blog post about the benefits of using a static site generator for a marketing site? Our CTO wants something to post on the engineering blog by Friday and I don't have time to write it myself",
+    "should_trigger": false
+  },
+  {
+    "query": "I drafted a blog post last week about my experience with burnout — like a full draft, maybe 1400 words. Can you read it and tell me if the structure works? I feel like the middle drags and the ending doesn't land but I'm too close to it",
+    "should_trigger": false
+  },
+  {
+    "query": "I have a finished draft of a personal essay about my dad's dementia and I need someone to edit it — not for typos but for the emotional shape. It's about 3000 words. The opening is strong but I'm not sure the middle earns the ending. Will you read it and give me feedback?",
+    "should_trigger": false
+  },
+  {
+    "query": "I recorded myself talking through some thoughts about a blog post I want to write on remote async work — here's the transcript, it's about 900 words of pretty rambly speech-to-text. Can you clean it up into a proper post?",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you give me 10 blog post topic ideas for a developer tools company's blog? We just launched a CLI tool and I need to pitch ideas in our next content meeting",
+    "should_trigger": false
+  },
+  {
+    "query": "I'm putting together a research report on the state of the Rust job market in 2026 — I've collected job postings, salary data from levels.fyi, and interviewed 12 engineers. Can you help me structure the findings section? I have like 30 data points and no idea how to organize them",
+    "should_trigger": false
+  },
+  {
+    "query": "I want to write a short story (literary fiction, ~3000 words) about two sisters meeting at a train station after a long estrangement. I have the setting and the characters but I'm struggling with the plot — what actually happens in the scene. Can you help me figure out the structure?",
+    "should_trigger": false
+  }
+]
