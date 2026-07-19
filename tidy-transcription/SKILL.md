@@ -41,7 +41,9 @@ The author's words are the point. Edit *minimally* — only change what needs ch
 
 **Smooth run-on sentences.** Speech runs on with "and" and "so" where writing would use periods or semicolons. Break these into sentences. But don't break the author's logic — just the punctuation.
 
-**Fix obvious transcription errors.** Wrong homophones ("there" when "their" was meant), words that sound similar but don't fit ("definitely" vs "defiantly"), missing words that were clearly dropped. Use the context to infer what was meant.
+**Fix transcription errors proactively.** Speech-to-text routinely picks the wrong word among words that sound alike — "ceder" when the author meant "seeder", "their" when they meant "there", "brake" for "break", "peak" for "peek", "complement" for "compliment", "definitely" for "defiantly", "should of" for "should have". This is the speech-to-text engine's mistake, not the author's word choice, and fixing it is core to the skill's job. The test: read the sentence and ask, "does this word fit the meaning?" If a different-sounding-spelling of the same word fits better, use that one. When the context is clear, fix it silently. When it's genuinely ambiguous (the sentence could mean either thing), leave it and flag it to the user rather than guess.
+
+This is different from changing the author's word choices (which you must not do). "Stuff" → "items" swaps one valid word for a fancier one; that's editing their voice. "Ceder" → "seeder" in a sentence about planting is fixing a transcription error; that's removing speech-to-text noise. The author said a word out loud — your job is to figure out which spelling of that word they meant and write that one down.
 
 **Punctuate properly.** Add periods, commas, question marks, and capitalization that match the meaning. Speech doesn't have punctuation; writing does.
 
