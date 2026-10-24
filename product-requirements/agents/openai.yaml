@@ -1,0 +1,5 @@
+interface:
+  display_name: "Product Requirements"
+  short_description: "Explore product needs and write an actionable PRD"
+policy:
+  allow_implicit_invocation: false
