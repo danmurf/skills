@@ -49,9 +49,9 @@ Develop shared terminology during discovery. Clarify terms that could mean diffe
 
 Use established product language whose meaning the user has supplied or confirmed. Where language conflicts or its meaning is uncertain, agree the intended meaning with the user. Record a preferred term, its precise product meaning, and any useful distinction from related terms or alternative names. Do not add a dictionary of ordinary words or prescribe code names, database entities, or a domain model.
 
-Include a **Domain glossary** immediately after **Target users and needs** when product-specific or ambiguous terms warrant definitions. Use those terms consistently throughout journeys, stories, requirements, and acceptance criteria. If an existing authoritative glossary covers the work, link to it and define only agreed additions or clarifications. Do not edit a shared external glossary without authorisation.
+Include a **Domain glossary** immediately after **Target users and needs**. Establish the product's domain terms with the user rather than leaving engineers to infer them. For each term, record its agreed meaning, the business context in which it applies, and relevant distinctions or alternative names where agreed. Use those terms consistently throughout journeys, stories, requirements, and acceptance criteria. If an existing authoritative glossary covers the work, this section may link to it and define only agreed additions or clarifications. Do not edit a shared external glossary without authorisation. Missing definitions are questions to resolve, not an invitation to invent a glossary.
 
-For linked PRDs, keep shared definitions in the overview or an agreed shared glossary and link to that source. If the same word has genuinely different meanings in different product areas, state each meaning and its context rather than forcing a misleading universal definition. Treat unresolved meanings that affect behaviour as open questions.
+For linked PRDs, keep shared definitions in the overview or an agreed shared glossary and link to that source. If the same word has genuinely different meanings in different product areas, state each meaning and its context rather than forcing a misleading universal definition. This glossary establishes the language that technical design must preserve as the ubiquitous language within each agreed bounded context. Capture context names and meanings only when supplied or confirmed by the user; do not infer bounded contexts from roles, screens, tables, or PRD file boundaries. Where technical context boundaries have not been decided, describe the agreed business usage and leave boundary design for technical discovery. Treat unresolved meanings that affect behaviour as open questions.
 
 ### Operational perspectives
 
@@ -85,7 +85,7 @@ Ask where to save the Markdown file or document set if no destination has been s
 
 ## Consistent PRD structure
 
-Use these core sections in order, inserting the optional **Domain glossary** after **Target users and needs** when needed and adjusting numbering accordingly. Adapt subsection depth to the work. For an overview PRD, **User stories and requirements** identifies and links capability PRDs; detailed stories belong in those documents.
+Use these core sections in order, inserting the required **Domain glossary** after **Target users and needs** and adjusting numbering accordingly. Adapt subsection depth to the work. For an overview PRD, **User stories and requirements** identifies and links capability PRDs; detailed stories belong in those documents.
 
 1. **Problem and context** — The problem, current workflow or behaviour, and why it matters.
 2. **Target users and needs** — Relevant roles, goals, circumstances, and operational perspectives.

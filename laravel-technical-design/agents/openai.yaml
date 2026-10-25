@@ -1,0 +1,5 @@
+interface:
+  display_name: "Laravel Technical Design"
+  short_description: "Design a Laravel application through guided questions"
+policy:
+  allow_implicit_invocation: false
