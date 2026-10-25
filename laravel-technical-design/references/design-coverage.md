@@ -1,6 +1,6 @@
 # Design coverage and output structure
 
-Use this guide to identify decisions after reading the PRD and to check the final design. Questions are adaptive and asked one at a time; the sections below are not a questionnaire. Include a capability only when it serves confirmed requirements. Never populate a section with invented defaults.
+Use this guide to identify decisions after reading the supplied PRD, UX design package, or both and to check the final design. Questions are adaptive and asked one at a time; the sections below are not a questionnaire. Include a capability only when it serves confirmed requirements. Never populate a section with invented defaults.
 
 ## Document structure
 
@@ -8,12 +8,12 @@ Use these sections as a coverage outline, including only sections with substanti
 
 Do not add administrative metadata such as status, readiness labels, authors, document owners, approvals, sign-off tables, document version numbers, or revision histories. A single `Last edited: YYYY-MM-DD` line immediately below the title is allowed, using the user's local date when the document is actually created or revised. Technical versions, application states, resource ownership rules, and HTTP status codes remain part of the design where required.
 
-1. **Purpose, scope, and sources:** PRD links and relevant source revision, requirement IDs, domain glossary, included and excluded work.
+1. **Purpose, scope, and sources:** available PRD and UX design links and relevant source revisions, requirement and flow/screen IDs, authoritative domain glossary, included and excluded work. Identify the supplied starting point without requiring absent artifacts.
 2. **Agreed architecture and versions:** application surfaces, boundaries, dependencies, stack, conventions, and consequential rationale.
 3. **Domain language, contexts, rules, and workflows:** authoritative PRD glossary, agreed bounded contexts, context-specific meanings, boundary mappings, actors, invariants, states, transitions, and end-to-end operations.
 4. **Data design:** schema, Eloquent mapping, query behaviour, and consistency rules.
 5. **Identity and access:** authentication, authorisation matrix, and tenancy where required.
-6. **UI areas, routes, and navigation:** route catalogue, menu tree, page contracts, and journeys.
+6. **UI areas, routes, and navigation:** route catalogue, menu tree, page contracts, and journeys, linked to accepted UX flows/screens where supplied.
 7. **API contracts:** endpoints, schemas, access, errors, and compatibility.
 8. **Application components and boundaries:** shared operations, interfaces, dependencies, and bindings.
 9. **Events and background work:** events, listeners, jobs, schedules, and delivery semantics.
@@ -32,7 +32,7 @@ Use a stable ID such as `TD-APP-012`. A statement or small related group should 
 
 | Field | Required meaning |
 |---|---|
-| Requirement | PRD requirement IDs and the user decision establishing this design |
+| Requirement | Source requirement IDs, relevant UX flow/screen IDs where supplied, and the user decision establishing this design |
 | Decision | A precise obligation describing what will be built or how it behaves |
 | Components | Named Laravel facilities, application components, and selected packages |
 | Contract | Inputs and types, outputs, actor/tenant context, permissions, and failures |
@@ -76,6 +76,8 @@ Include rationale where it explains a real trade-off. Omit irrelevant fields rat
 
 ### UI, routes and navigation
 
+- Accepted UX navigation, flows, screens, actions and states where supplied; map them to supporting contracts and reference the design package rather than duplicating mockups. Without UX, establish needed interface behaviour from the PRD and interview.
+- Preserve accepted UX decisions and explicit PRD departures; resolve other source conflicts with the user. Keep unreviewed proposals, sample data, simulated behaviour and prototype-only technology distinct from production obligations.
 - Public, authenticated, customer, organisation, settings and internal areas only when required.
 - Route catalogue: HTTP method, path, route name, controller/component, middleware, binding/scoping, permission and requirement ID.
 - Menu tree: hierarchy, labels, order, destinations, visibility, active states, and icons if agreed. Routes without menu entries and grouping nodes without pages are valid.
@@ -151,7 +153,7 @@ Consider only applicable features and verify version-specific support:
 
 ### Verification and later work splitting
 
-- Map PRD acceptance criteria to technical statements and observable checks. Cover denial, tenant isolation, invariants, invalid transitions, duplicate/concurrent requests, rollback, integration failure and recovery where relevant.
+- Map source acceptance criteria and supplied accepted UX flows, screens, actions and states to technical statements and observable checks. Cover denial, tenant isolation, invariants, invalid transitions, duplicate/concurrent requests, rollback, integration failure and recovery where relevant.
 - Identify appropriate unit, feature, database, interface/contract, browser and production-engine checks; select Pest/PHPUnit and tools only by agreement.
 - Name needed fixtures/factory states, real-service integration environments and measurable acceptance thresholds. Do not invent targets.
 - Identify coherent implementation areas, prerequisite decisions, shared schemas/contracts and integration checkpoints so work can later be split among engineers.

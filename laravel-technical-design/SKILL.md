@@ -1,27 +1,31 @@
 ---
 name: laravel-technical-design
-description: Turn a supplied product requirements document into a Laravel technical design through a user-led interview, one question at a time. Use only when explicitly invoked for Laravel technical design, not for automatic design generation or implementation.
+description: Turn a supplied PRD, UX design package, or both into a Laravel technical design through a user-led interview, one question at a time. Use only when explicitly invoked for Laravel technical design, not for automatic design generation or implementation.
 ---
 
 # Laravel Technical Design
 
-Help the user decide what will be built and how it will work. Produce a technical design in simplified technical English that one or more engineers can use to implement the supplied PRD consistently and later divide into work packages.
+Help the user decide what will be built and how it will work. Produce a technical design in simplified technical English that one or more engineers can use to implement the supplied requirements and agreed UX consistently and later divide into work packages.
 
 This is an explicitly invoked design interview. It does not authorise application implementation, dependency installation, infrastructure provisioning, or deployment.
 
 ## Establish the source
 
-Read the supplied PRD and any explicitly identified supporting requirements. If no PRD is available, ask for its content or location as the single next question. Do not start a generic architecture questionnaire in its place. If a native text question cannot accept an attachment, ask in ordinary chat for the document.
+Accept a PRD, a UX design package, or both as the starting point. A prior UX design is optional: proceed directly from a PRD when that is what the user supplies, without requiring the UX skill or its outputs first. If neither source is available, ask for one source's content or location as the single next question. If a native text question cannot accept an attachment, ask in ordinary chat for the material.
 
-Preserve requirement IDs and domain language. For unnumbered requirements, assign reference IDs without changing their meaning. Identify contradictions, missing product behaviour, and decisions already established by the PRD or conversation. A PRD supplied for this task is a requirements source; an unrelated file, existing implementation, or research finding is context until the user adopts it as a constraint.
+When starting from UX design, read its entry document, relevant flows, screen inventory, interaction specification, decision notes, and prototype/source where accessible. Follow relevant PRD and glossary links when available. If the PRD is unavailable, use requirements explicitly captured in the supplied UX package and clarify consequential gaps one question at a time; do not demand a separate PRD when the material already establishes what is needed. Ask for a missing source only when it is needed to resolve a material uncertainty.
+
+Preserve requirement IDs, UX flow/screen IDs, and domain language. For unnumbered source items, assign reference IDs without changing their meaning. Identify contradictions, missing product behaviour, and decisions already established by the sources or conversation. A PRD supplied for this task is a requirements source. Reuse explicitly accepted UX decisions without asking the user to redesign or reapprove them. A supplied UX package may contain unreviewed proposals: preserve their review state rather than treating every artifact as agreed. If its authority is unclear, ask one focused question. An unrelated file, existing implementation, or research finding remains context until adopted as a constraint.
+
+Treat requirements as the source of product goals, scope, and business rules, and accepted UX as the source of interaction and presentation decisions. Reuse explicit agreed departures from the PRD recorded in the UX package. For other conflicts, ask the user which behaviour is intended; neither source silently overrides the other. Prototype sample data, simulated persistence, state toggles, and its chosen rendering stack do not establish business rules or production architecture. If a prototype or linked artifact cannot be inspected, state that limitation and use accessible specifications without claiming visual verification.
 
 Clarify whether this is a new application or a change to an existing one if not established. Inspect relevant existing project material when available and authorised, but ask which existing architectural choices must be preserved rather than adopting them silently.
 
-Read [references/design-coverage.md](references/design-coverage.md) after reading the PRD to identify applicable decisions. Revisit relevant sections when preparing the output. It is a coverage guide, not a fixed interview or a list of features to add.
+Read [references/design-coverage.md](references/design-coverage.md) after reading the supplied sources to identify applicable decisions. Revisit relevant sections when preparing the output. It is a coverage guide, not a fixed interview or a list of features to add.
 
 ## Domain terminology and bounded contexts
 
-Treat the PRD's user-agreed domain glossary as the source of domain terminology. If the glossary is missing, incomplete, or ambiguous for the affected work, establish the missing terms with the user one question at a time before designing components that depend on them. Do not invent meanings, substitute familiar synonyms, or silently rename concepts.
+Treat the user-agreed domain glossary in the PRD or adopted UX/requirements material as the source of domain terminology. If the glossary is missing, incomplete, or ambiguous for the affected work, establish the missing terms with the user one question at a time before designing components that depend on them. Do not invent meanings, substitute familiar synonyms, or silently rename concepts.
 
 Apply domain-driven design through a ubiquitous language within each explicitly agreed bounded context: the same term must have the same agreed meaning throughout that context's requirements, design, model names, relationships, operations, events, interfaces, API contracts, UI labels, and verification scenarios. Language-level naming forms such as singular class names, plural table names, and casing may vary without changing domain meaning; follow agreed naming conventions. Do not force unrelated technical infrastructure concepts into the domain glossary.
 
@@ -76,6 +80,10 @@ Develop the design around product workflows and shared contracts. Name the Larav
 
 Cover routes and navigation as well as backend design. Keep page routes, menu structure, and API endpoints distinct but linked. UI and API entry points must have agreed relationships to shared business operations; do not assume the UI consumes the public API.
 
+When UX exists, map accepted flows, screens, actions, and states to technical contracts instead of recreating wireframes or visual design. Specify the data, validation, permissions, state transitions, background work, and failure handling needed to support that experience. Link to authoritative UX details rather than copying them. Surface feasibility constraints and propose changes for the user's decision; do not silently simplify accepted interactions. When starting from a PRD alone, establish the necessary UI behaviour through the interview without requiring a separate mockup phase.
+
+Expect UX packages to be lightweight: application areas, main screens, navigation, and core journeys may be all they establish. Treat this high-level experience design as a valid starting point rather than requiring a detailed UI specification. Specify necessary technical behaviour here and ask only about consequential unresolved product choices; do not require the user to return to UX design to complete routine interface detail.
+
 Treat local development and production deployment as design decisions. Specify the selected runtime approach, services, environment differences, everyday workflows, delivery pipeline, release sequencing, and recovery behaviour. Do not assume containers, a cloud provider, SQLite for tests, synchronous local queues, or any other setup.
 
 Use the coverage guide to check omissions throughout the interview. Unexplored means **Not yet established**, not **Not applicable**. A reasoned exclusion or decision that no extra component is needed is a useful confirmed outcome. Do not add dashboards, billing, AI, multi-tenancy, or other product scope simply because Laravel supports them.
@@ -99,11 +107,12 @@ Write in simplified technical English: short sentences, active voice, one rule p
 Before delivery, verify:
 
 - Each in-scope requirement maps to design statements and observable verification scenarios; omissions and exclusions are explicit.
+- Supplied accepted UX flows, screens, actions, and states map to supporting technical contracts. Unreviewed proposals remain identifiable, source conflicts are resolved, and prototype shortcuts have not become production decisions.
 - Every substantive design choice has an established source; proposed choices have not become requirements accidentally.
 - The document contains no project timelines or estimates, and examples, scenarios, rationale, and operational values add no unagreed details.
 - Administrative boilerplate and empty template sections are absent; any last-edited date reflects the actual edit in the user's local date.
 - Schemas, permission rules, routes, UI behaviour, interfaces, event payloads, and environment settings agree across sections.
-- Domain names and meanings match the agreed PRD glossary within each bounded context; context boundaries and cross-context translations are explicit user decisions, not inferred architecture.
+- Domain names and meanings match the agreed source glossary within each bounded context; context boundaries and cross-context translations are explicit user decisions, not inferred architecture.
 - Contracts define relevant invalid inputs, denied access, duplicates, concurrency, rollback, and external failures without inventing outcomes.
 - Dependencies and shared contracts allow later work splitting without forcing separate engineers to guess integration behaviour.
 - Substantive open questions are visible. Do not claim the design can be implemented without further decisions while unresolved choices require engineers to make material product or architectural decisions.

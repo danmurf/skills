@@ -1,0 +1,5 @@
+interface:
+  display_name: "Application UX Design"
+  short_description: "Turn a PRD into reviewed flows and shadcn mockups"
+policy:
+  allow_implicit_invocation: false
