@@ -6,13 +6,20 @@ Use these skills to turn an idea into requirements and an application design. Ea
 
 A product requirements document (PRD) describes what the product must do. User experience (UX) design shows its screens and how people use them. Technical design explains how to build it.
 
+Blue boxes with double borders show the skill used at each stage. Plain boxes show its inputs or outputs. The dashed path skips UX design.
+
 ```mermaid
 flowchart TD
-    Idea["Product or feature idea"] --> Requirements["product-requirements"]
-    Requirements -->|PRD| UX["application-ux-design"]
-    Requirements -->|PRD directly| Technical["laravel-technical-design"]
-    UX -->|UX design and requirements| Technical
+    Idea["Product or feature idea"] --> Requirements[["Requirements stage<br/>Skill: product-requirements"]]
+    Requirements --> PRD["Product requirements document"]
+    PRD --> UX[["UX design stage<br/>Skill: application-ux-design"]]
+    UX --> UXDesign["Screen mockups, flows, and walkthrough<br/>with links to requirements"]
+    UXDesign --> Technical[["Technical design stage<br/>Skill: laravel-technical-design"]]
+    PRD -.->|Skip UX design| Technical
     Technical --> Design["Technical design to guide development"]
+
+    classDef skill fill:#e8f1ff,stroke:#3566a8,color:#15263c,stroke-width:2px
+    class Requirements,UX,Technical skill
 ```
 
 - [**product-requirements**](product-requirements) — Define the problem, users, and product scope. Write a Markdown PRD with user stories and clear conditions for checking that each requirement is met.
